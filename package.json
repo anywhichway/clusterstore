@@ -1,0 +1,30 @@
+{
+  "name": "clusterstore",
+  "version": "0.0.1",
+  "description": "Disk or server based clustering of objects supporting the Web Storage API",
+  "engines": {},
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anywhichway/clusterstore.git"
+  },
+  "keywords": [
+    "filestore, database, key-value, localstorage, JSONBlockStore"
+  ],
+  "author": "Simon Y. Blackwell <syblackwell@anywhichway.com> (http://www.github.com/anywhichway)",
+  "bugs": {
+    "url": "https://github.com/anywhichway/clusterstore/issues"
+  },
+  "homepage": "https://github.com/anywhichway/clusterstore#readme",
+  "dependencies": {
+    "blockstore": "^0.1.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
