@@ -10,7 +10,8 @@
 				this.stores.push(store);
 			} else if(type==="string") {
 				if(store.indexOf("http")===0) {
-					// connect to remote store
+					const RemoteStore = require("remotestore");
+					this.stores.push(new RemoteStore(store,options));
 				} else {
 					const BlockStore = require("blockstore");
 					this.stores.push(new BlockStore(store,options));

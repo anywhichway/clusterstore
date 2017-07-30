@@ -1,5 +1,5 @@
 const ClusterStore = require("../index.js"),
-	storage = new ClusterStore(["./test/data1","./test/data2","./test/data3","./test/data4"],{replicate:2500,clear:true}), //./test/data d:/test
+	storage = new ClusterStore(["./test/data/data1","./test/data/data2","./test/data/data3","./test/data/data4"],{replicate:2500,clear:true}), //./test/data d:/test
 	//rostorage = new BlockStore("./test/data",{clear:true}),
 	keygen = (length) => {
 		const base = Math.random()+"";
@@ -28,19 +28,13 @@ async function test() {
 			await storage.get(key);
 		}
 		end = Date.now();
-		console.log("Cached Read Records Sec:", Math.round(testsize / ((end-start)/1000)));
-		for(let store of storage.stores) {
-			store.cache = false;
-		}
+		console.log("Uncached Read Records Sec:", Math.round(testsize / ((end-start)/1000)));
 		start = Date.now();
 		for(let key of keys) {
 			await storage.get(key);
 		}
 		end = Date.now();
-		console.log("Uncached Read Records Sec:", Math.round(testsize / ((end-start)/1000)));
-		for(let store of storage.stores) {
-			store.cache = true;
-		}
+		console.log("Cached Read Records Sec:", Math.round(testsize / ((end-start)/1000)));
 		//await storage.compress();
 		await storage.clear();
 	}

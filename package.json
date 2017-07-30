@@ -1,6 +1,6 @@
 {
   "name": "clusterstore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Disk or server based clustering of objects supporting the Web Storage API",
   "engines": {},
   "license": "MIT",
@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/anywhichway/clusterstore#readme",
   "dependencies": {
-    "blockstore": "^0.1.4"
+    "blockstore": "^0.1.4",
+    "remotestore": "0.0.4"
   },
   "devDependencies": {
     "chai": "^4.1.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "storeserver": "0.0.4"
   }
 }

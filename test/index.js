@@ -1,5 +1,10 @@
 const ClusterStore = require("../index.js"),
-	storage = new ClusterStore(["./test/data1"],{clear:false}),
+	StoreServer = require("storeserver"),
+	BlockStore = require("blockstore"),
+	server = new StoreServer(new BlockStore("./test/data/remote")),
+	RemoteStore = require("remotestore"),
+	remotestore = new RemoteStore("http://localhost:3000"),
+	storage = new ClusterStore(["./test/data/data1"],{clear:false}),
 	expect = require("chai").expect;
 
 describe("tests",function() {
